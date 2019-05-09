@@ -122,7 +122,7 @@ if __name__ == "__main__":
     image_path = sys.argv[2]
     mask_path = sys.argv[4]
     resize_image(image_path)
-    left, right, shape, original_shape = eye_detector("shape_predictor_68_face_landmarks.dat", image_path)
+    left, right, shape, original_shape = eye_detector("./model/shape_predictor_68_face_landmarks.dat", image_path)
 
     if (len(left) != 0 or len(right) != 0):
         left_mask = make_mask(*enlarge_diagonal(left[0][0], left[0][1], left[3][0], left[3][1]), shape)
